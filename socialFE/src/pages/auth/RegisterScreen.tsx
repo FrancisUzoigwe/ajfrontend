@@ -1,25 +1,25 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { BsFacebook, BsFillCameraFill, BsGithub } from "react-icons/bs";
+import { BsFacebook, BsGithub } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
-import pix from "../../../public/vite.svg";
+// import pix from "../../../public/vite.svg";
 import { registerApi } from "../../apis/AuthApi";
 const RegisterScreen = () => {
   const navigate = useNavigate();
   const [checked, setChecked] = useState<boolean>(false);
 
-  const [image, setImage] = useState<string>(pix);
-  const [avatar, setAvatar] = useState<string>("");
-  const onHandleImage = (event: any) => {
-    const localImage = event.target.files[0];
-    const saveImage = URL.createObjectURL(localImage);
-    setImage(localImage);
-    setAvatar(saveImage);
-  };
+  // const [image, setImage] = useState<string>(pix);
+  // const [avatar, setAvatar] = useState<string>("");
+  // const onHandleImage = (event: any) => {
+  //   const localImage = event.target.files[0];
+  //   const saveImage = URL.createObjectURL(localImage);
+  //   setImage(localImage);
+  //   setAvatar(saveImage);
+  // };
   const Schema = yup.object({
     email: yup.string().required(),
     name: yup.string().required(),

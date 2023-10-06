@@ -108,22 +108,24 @@ const SigninScreen = () => {
               </div>
             </Link>
           </div>
+          <Link to="/forgot">
+            <div className="flex text-[12px] text-red-400 justify-end mt-2 underline">
+              Forgot password?{" "}
+            </div>
+          </Link>
         </div>
-        <div className="mt-2">
+        <div className="mt-3">
           <button
             className={` ${
               checked ? "bg-blue-400" : "bg-gray-300 text-black"
             } transition-all duration-500 px-5 py-[6px]  max-sm:text-[10px] rounded font-medium text-white`}
             disabled={!checked}
             type="submit"
-            onClick={() => {
-              alert("Clicked");
-            }}
           >
             Signin
           </button>
         </div>
-        <div className="text-[13px] uppercase mt-1 max-sm:text-[11px]">
+        <div className="text-[13px] uppercase mt-2 max-sm:text-[11px] mb-1">
           Or Signin with
         </div>
         <div className="flex justify-between items-center min-w-[300px] mt-1 mb-4">

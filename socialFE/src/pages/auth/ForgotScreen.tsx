@@ -74,7 +74,7 @@ const Forgotpassword = () => {
             remember password?{" "}
             <Link to="/sign-in">
               <div className="ml-2 underline text-red-400 font-semibold">
-                sign in
+                Sign in
               </div>
             </Link>
           </div>
