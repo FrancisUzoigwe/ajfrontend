@@ -1,10 +1,11 @@
 import Testimony from "./Testimony";
 import girl from "../assets/girl.png"
+import man from "../assets/man.png"
 
 const Review = () => {
   return (
     <div className="w-[100%] h-[100vh] bg-red-00 flex flex-col items-center p-4">
-      <div className="w-[220px] h-[40px] rounded-[20px] border flex justify-center items-center text-[20px]">
+      <div className="w-[220px] h-[40px] rounded-[20px] border my-4 mt-3 flex justify-center items-center text-[20px]">
         <div className="w-[20px] h-[20px] border flex justify-center items-center mr-2">
           A
         </div>
@@ -20,7 +21,7 @@ const Review = () => {
       </div>
           <div className="w-[85%] h-[520px] my-10 flex justify-between">
           <Testimony topic="Excellent service & support!!" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis nam id facilis, provident doloremque placeat eveniet molestias laboriosam. Optio, esse." img={girl} staff="Lizzy Bella" post="CEO, AJConnect"/>
-          <Testimony topic="Excellent service & support!!" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis nam id facilis, provident doloremque placeat eveniet molestias laboriosam. Optio, esse." img={girl} staff="Lizzy Bella" post="CEO, AJConnect"/>
+          <Testimony topic="Excellent service & support!!" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis nam id facilis, provident doloremque placeat eveniet molestias laboriosam. Optio, esse." img={man} staff="Dev Francis" post="FrontEnd Lead"/>
           <Testimony topic="Excellent service & support!!" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis nam id facilis, provident doloremque placeat eveniet molestias laboriosam. Optio, esse." img={girl} staff="Lizzy Bella" post="CEO, AJConnect"/>
           </div>
     </div>
