@@ -31,9 +31,9 @@ export const mainRouter = createBrowserRouter([
   {
     path: "/chat",
     element: (
-      <PrivateRouter>
+      // <PrivateRouter>
         <Layout />
-      </PrivateRouter>
+      // </PrivateRouter>
     ),
     children: [
       {

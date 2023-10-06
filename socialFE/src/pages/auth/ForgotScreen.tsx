@@ -90,20 +90,6 @@ const Forgotpassword = () => {
             Re-set
           </button>
         </div>
-        {/* <div className="text-[13px] uppercase mt-1 max-sm:text-[11px]">
-          Or Signin with
-        </div>
-        <div className="flex justify-between items-center min-w-[300px] mt-1 mb-4">
-          <div className="min-w-[80px] min-h-[35px]  flex justify-center hover:bg-gray-200 transition-all duration-500 cursor-pointer items-center rounded border">
-            <BsFacebook className="text-2xl max-sm:text-lg" />
-          </div>
-          <div className="min-w-[80px] min-h-[35px] flex justify-center hover:bg-gray-200 transition-all duration-500 cursor-pointer items-center rounded border">
-            <FcGoogle className="text-2xl max-sm:text-lg" />
-          </div>
-          <div className="min-w-[80px] min-h-[35px] flex justify-center hover:bg-gray-200 transition-all duration-500 cursor-pointer items-center rounded border">
-            <BsGithub className="text-2xl max-sm:text-lg" />
-          </div>
-        </div> */}
       </form>
     </div>
   );

@@ -3,6 +3,7 @@ import {LiaComments} from "react-icons/lia"
 
 const Add = () => {
   return (
+    
     <div className='w-full  flex flex-col items-center'>
         <div className=' w-[95%] flex flex-col'>
             <div className='text-[10px] mt-1'>You and 2 others Like this post</div>
