@@ -3,7 +3,7 @@ import { MdOutlinePublic } from "react-icons/md";
 import { BsFillCaretDownFill } from "react-icons/bs";
 import Add from "./Add";
 import Comment from "./Comment";
-import error from "../../assets/Error.png";
+// import error from "../../assets/Error.png";
 import { useReadAllPost } from "../../hooks/useUserHook";
 
 const ImagePart = () => {
@@ -53,7 +53,7 @@ const ImagePart = () => {
           <div className="mt-5 w-full justify-center flex h-auto">
             <div className="w-[95%] h-[270px] max-sm:h-[200px] border rounded-md z-[-20] flex justify-center items-center overflow-hidden">
               <div className=" z-[-20] w-full h-full flex justify-end">
-                <img src={error} className="object-cover w-full h-full" />
+                <img src={el?.image} className="object-cover w-full h-full" />
               </div>
             </div>
           </div>
