@@ -57,6 +57,10 @@ const ImagePart = () => {
               </div>
             </div>
           </div>
+          <div className="w-full flex justify-center items-center">
+          <div className="w-[95%] text-[16px] max-sm:text-[13px]">{el?.message}</div>
+
+          </div>
           <Add />
           <Comment />
         </div>
