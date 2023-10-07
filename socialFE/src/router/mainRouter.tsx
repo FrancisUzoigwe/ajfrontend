@@ -15,7 +15,7 @@ import SigninScreen from "../pages/auth/SigninScreen";
 import PrivateRouter from "./PrivateRouter";
 import Error from "../error/Error";
 import Forgotpassword from "../pages/auth/ForgotScreen";
-import Changepassword from "../pages/auth/ChangePassword";
+
 
 export const mainRouter = createBrowserRouter([
   {
@@ -33,7 +33,7 @@ export const mainRouter = createBrowserRouter([
     element: (
       <PrivateRouter>
         <Layout />
-      </PrivateRouter>
+      // </PrivateRouter>
     ),
     children: [
       {
@@ -82,10 +82,10 @@ export const mainRouter = createBrowserRouter([
     path: "/:token/sign-in",
     element: <SigninScreen />,
   },
-  {
-    path: "/:token/change",
-    element: <Changepassword />,
-  },
+  // {
+  //   path: "/:token/change",
+  //   element: <ChangePasswordAPI />,
+  // },
   {
     path: "/forgot",
     element: <Forgotpassword />,

@@ -92,7 +92,7 @@ const TogglePage = () => {
             <div className=" flex h-[200px] w-[410px]  justify-center items-start">
               <img
                 src={avatar ? avatar : image}
-                className="w-full h-[200px] object-cover rounded-lg border"
+                className="w-full h-[200px] object-cover rounded-lg border bg-white"
               />
             </div>
             <input
