@@ -9,7 +9,7 @@ const Card : React.FC <iCard> = ({image , title , message}) => {
         <div
           className="w-[350px] h-full border rounded-[20px] mx-4 flex items-center flex-col justify-center p-6"
           style={{
-            boxShadow: "rgba(0, 0, 0, 0.3) 0px 22px 70px 4px",
+            boxShadow: "rgba(0, 0, 0, 0.1) 0px 22px 70px 4px",
           }}
         >
             <div className="w-[70px] h-[70px] flex justify-center items-center ">
