@@ -1,24 +1,25 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { BsFacebook, BsFillCameraFill, BsGithub } from "react-icons/bs";
+import { BsFacebook, BsGithub } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
-import pix from "../../../public/vite.svg";
+// import pix from "../../../public/vite.svg";
+import { registerApi } from "../../apis/AuthApi";
 const RegisterScreen = () => {
   const navigate = useNavigate();
   const [checked, setChecked] = useState<boolean>(false);
 
-  const [image, setImage] = useState<string>(pix);
-  const [avatar, setAvatar] = useState<string>("");
-  const onHandleImage = (event: any) => {
-    const localImage = event.target.files[0];
-    const saveImage = URL.createObjectURL(localImage);
-    setImage(localImage);
-    setAvatar(saveImage);
-  };
+  // const [image, setImage] = useState<string>(pix);
+  // const [avatar, setAvatar] = useState<string>("");
+  // const onHandleImage = (event: any) => {
+  //   const localImage = event.target.files[0];
+  //   const saveImage = URL.createObjectURL(localImage);
+  //   setImage(localImage);
+  //   setAvatar(saveImage);
+  // };
   const Schema = yup.object({
     email: yup.string().required(),
     name: yup.string().required(),
@@ -36,14 +37,11 @@ const RegisterScreen = () => {
 
   const onSubmit = handleSubmit((data: any) => {
     const { name, email, password } = data;
-    const myForms = new FormData();
-    myForms.append("name", name);
-    myForms.append("email", email);
-    myForms.append("password", password);
-    myForms.append("image", avatar);
-
-    console.log(data);
-    navigate("/chat");
+    registerApi({ name, email, password }).then((res: any) => {
+      navigate("/sign-in");
+      console.log("This is :", data);
+      console.log("This is res:", res);
+    });
     reset();
   });
 
@@ -53,25 +51,7 @@ const RegisterScreen = () => {
         className="min-w-[320px] min-h-[400px] bg-white flex items-center flex-col rounded-xl shadow-lg"
         onSubmit={onSubmit}
       >
-        <div className="mt-4 min-w-[100px] min-h-[100px] rounded-[50%] border flex items-center border-gray-400 justify-center max-sm:w-[30px] max-sm:h-[30px] max-sm:rounded-[50%] relative ">
-          <img
-            src={avatar ? avatar : image}
-            alt=""
-            className="w-[100px] h-[100px] object-cover overflow-hidden rounded-[50%] max-sm:w-full max-sm:h-full max-sm:rounded-[50%]"
-          />
-          <input
-            type="file"
-            id="img"
-            className="hidden"
-            onChange={onHandleImage}
-          />
-          <label
-            className="absolute bg-white mt-16 ml-16 hover:text-gray-500 transition-all duration-500 cursor-pointer px-2 py-2 border rounded-[50%]"
-            htmlFor="img"
-          >
-            <BsFillCameraFill className="text-2xl " />
-          </label>
-        </div>
+        <div className="mt-[20px]">Signup</div>
         <div className="mt-[25px] relative rounded-md">
           <div className="absolute bg-white px-1 text-[13px] max-sm:text-[10px] max-sm:mt-[-8px] font-semibold ml-[10px] mt-[-10px] ">
             Enter Email:
@@ -161,7 +141,9 @@ const RegisterScreen = () => {
             Signup
           </button>
         </div>
-        <div className="text-[13px] uppercase mt-1 max-sm:text-[11px]">Or Signup with</div>
+        <div className="text-[13px] uppercase mt-1 max-sm:text-[11px]">
+          Or Signup with
+        </div>
         <div className="flex justify-between items-center min-w-[300px] mt-1 mb-4">
           <div className="min-w-[80px] min-h-[35px]  flex justify-center hover:bg-gray-200 transition-all duration-500 cursor-pointer items-center rounded border">
             <BsFacebook className="text-2xl max-sm:text-lg" />
