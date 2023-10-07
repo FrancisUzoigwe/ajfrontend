@@ -33,7 +33,7 @@ const Forgotpassword = () => {
   });
 
   return (
-    <div className="w-full h-screen flex justify-center items-center bg-purple-300">
+    <div className="w-full h-screen flex justify-center items-center bg-[#5776cc]">
       <form
         className="min-w-[320px] max-h-[400px] bg-white flex items-center flex-col rounded-xl shadow-lg"
         onSubmit={onSubmit}

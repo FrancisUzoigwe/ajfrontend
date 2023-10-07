@@ -42,9 +42,9 @@ const RegisterScreen = () => {
       console.log(data)
       if (res) {
         Swal.fire({
-          position: "top-end",
+          position: "center",
           icon: "success",
-          title: "Your work has been saved",
+          title: "Your account has been successfully created, awaiting verification",
           showConfirmButton: false,
           timer: 1500,
         });
@@ -54,6 +54,7 @@ const RegisterScreen = () => {
           icon: "error",
           title: "Oops...",
           text: "Something went wrong!",
+          footer: "Why this error🤔"
         });
         navigate("/sign-up");
       }
@@ -63,7 +64,7 @@ const RegisterScreen = () => {
   });
 
   return (
-    <div className="w-full h-screen flex justify-center items-center bg-purple-300">
+    <div className="w-full h-screen flex justify-center items-center bg-[#5776cc]">
       <form
         className="min-w-[320px] min-h-[400px] bg-white  flex items-center flex-col rounded-xl shadow-lg"
         onSubmit={onSubmit}

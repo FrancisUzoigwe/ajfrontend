@@ -1,20 +1,21 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { MdOutlinePublic } from "react-icons/md";
 import { BsFillCaretDownFill } from "react-icons/bs";
 import Add from "./Add";
 import Comment from "./Comment";
 // import error from "../../assets/Error.png";
 import { useReadAllPost } from "../../hooks/useUserHook";
+import InfoComp from "./InfoComp";
 
 const ImagePart = () => {
   const { post } = useReadAllPost();
 
-  const [view, setView] = useState<boolean>(false);
-  const onView = () => {
-    setView(!view);
-  };
+  // const [view, setView] = useState<boolean>(false);
+  // const onView = () => {
+  //   setView(!view);
+  // };
 
-  console.log(post)
+  console.log(post);
   return (
     <div>
       {post?.map((el: any) => (
@@ -30,9 +31,7 @@ const ImagePart = () => {
               </div>
               <div className="mb-[-5px]">
                 <div className="flex text-[14px] items-center">
-                  <div className="mr-2 text-[13px] font-semibold py-[2px]">
-                    {el.userID?.name}
-                  </div>{" "}
+                  <InfoComp userID={el.userID} />
                   <div className="text-[11px]">posted an update</div>
                 </div>
                 <div className="flex mt-[-5px] text-[10px] font-semibold items-center">
@@ -40,7 +39,8 @@ const ImagePart = () => {
                   <div
                     className="ml-[15px] text-base flex items-center cursor-pointer relative "
                     onClick={() => {
-                      onView();
+                      // onView();
+                      console.log(post);
                     }}
                   >
                     <MdOutlinePublic className="z-[-20]" />

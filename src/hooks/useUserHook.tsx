@@ -12,6 +12,14 @@ export const useViewOne = () => {
   return { data, isLoading };
 };
 
+export const useViewPostOne = (id:string) => {
+  const { data, isLoading } = useQuery({
+    queryKey: ["postUser", {id: id}],
+    queryFn: () => viewUserApi(id),
+  });
+  return { data, isLoading };
+};
+
 export const useReadAllPost = () => {
   const { data: post } = useQuery({
     queryKey: ["post"],
