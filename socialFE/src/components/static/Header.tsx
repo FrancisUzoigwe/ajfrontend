@@ -6,8 +6,12 @@ import { MdGroups } from "react-icons/md";
 import { IoMdNotifications } from "react-icons/io";
 import { SiQuantconnect } from "react-icons/si";
 import { Link } from "react-router-dom";
+// import { useSelector } from "react-redux";
+import { useViewOne } from "../../hooks/useUserHook";
 
 const Header = () => {
+  // const userID = useSelector((state: any) => state.user);
+  const { data } = useViewOne();
   const [scroll, setScroll] = useState<boolean>(false);
   const onScroll = () => {
     setScroll(!scroll);
@@ -22,7 +26,7 @@ const Header = () => {
   return (
     <div>
       {scroll ? (
-        <div className="bg-gray-100 w-full transition-all duration-500 z-100">
+        <div className="bg-gray-100 w-full transition-all duration-500 z-400">
           <div className="flex justify-between px-[35px] py-4 w-full  max-sm:w-full max-sm:justify-between">
             {/* {logo side} */}
             <div className="leading-4 italic max-sm:text-[12px]">
@@ -84,11 +88,11 @@ const Header = () => {
             </div>
             <div className="flex px-2 rounded-md py-1 items-center hover:bg-slate-300 cursor-pointer duration-300 transition-all max-sm:hidden">
               <div className="py-[2px] px-[2px] font-Poppin text-[14px] mr-2 font-semibold max-sm:text-[12px]">
-                AjConnect
+                {data?.name}
               </div>
               <div>
                 <img
-                  src=""
+                  src={data?.image}
                   alt="Profile"
                   className="w-[35px] h-[35px] rounded-[50%] bg-white max-sm:w-[25px] max-sm:h-[25px] max-sm:rounded-[50%] "
                 />
@@ -97,7 +101,7 @@ const Header = () => {
           </div>
         </div>
       ) : (
-        <div className="bg-gray-100 w-full z-100">
+        <div className="bg-gray-100 w-full z-400">
           <div className="flex justify-between px-[35px] py-4 w-full  max-sm:w-full max-sm:justify-between">
             {/* {logo side} */}
             <div className="leading-4 italic max-sm:text-[12px]">
@@ -159,11 +163,11 @@ const Header = () => {
             </div>
             <div className="flex px-2 rounded-md py-1 items-center hover:bg-slate-300 cursor-pointer duration-300 transition-all max-sm:hidden">
               <div className="py-[2px] px-[2px] font-Poppin text-[14px] mr-2 font-semibold max-sm:text-[12px]">
-                AjConnect
+              {data?.name}
               </div>
               <div>
                 <img
-                  src=""
+                  src={data?.image}
                   alt="Profile"
                   className="w-[35px] h-[35px] rounded-[50%] bg-white max-sm:w-[25px] max-sm:h-[25px] max-sm:rounded-[50%] "
                 />

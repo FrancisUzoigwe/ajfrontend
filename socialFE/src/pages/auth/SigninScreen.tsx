@@ -7,10 +7,13 @@ import { Link, useParams } from "react-router-dom";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { signinApi, verifiedApi } from "../../apis/AuthApi";
+import Swal from "sweetalert2";
+import { useDispatch } from "react-redux";
+import { userState } from "../../global/GlobalFile";
 
 const SigninScreen = () => {
   const { token } = useParams();
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [checked, setChecked] = useState<boolean>(false);
 
@@ -31,9 +34,24 @@ const SigninScreen = () => {
   const onSubmit = handleSubmit((data: any) => {
     const { email, password } = data;
     signinApi({ email, password }).then((res: any) => {
-      console.log("This is data", data);
-      console.log("This is res", res);
-      navigate("/chat");
+      if (res) {
+        dispatch(userState(res));
+        navigate("/chat");
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your work has been saved",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      } else {
+        navigate("/sign-in");
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
+      }
     });
   });
 
@@ -46,7 +64,7 @@ const SigninScreen = () => {
   return (
     <div className="w-full h-screen flex justify-center items-center bg-purple-300">
       <form
-        className="min-w-[320px] max-h-[400px] bg-white flex items-center flex-col rounded-xl shadow-lg"
+        className="min-w-[320px] px-4 max-h-[400px] bg-white flex items-center flex-col rounded-xl shadow-lg"
         onSubmit={onSubmit}
       >
         <div className="py-[20px]">Signin</div>

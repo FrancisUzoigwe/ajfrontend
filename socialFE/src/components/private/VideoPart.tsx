@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { MdOutlinePublic } from "react-icons/md";
-import { BsFillCaretDownFill } from "react-icons/bs";
 import Video from "../../assets/video.mp4";
 import Add from "./Add";
 import Comment from "./Comment";
@@ -11,10 +10,10 @@ const VideoPart = () => {
     setControl(!control);
   };
 
-  const [view, setView] = useState<boolean>(false);
-  const onView = () => {
-    setView(!view);
-  };
+  // const [view, setView] = useState<boolean>(false);
+  // const onView = () => {
+  //   setView(!view);
+  // };
 
   return (
     <div className="mt-5 w-full max-h-[550px]  rounded-md border border-gray-300">
@@ -32,15 +31,10 @@ const VideoPart = () => {
             </div>
             <div className="flex mt-[-5px] text-[10px] font-semibold items-center">
               2 years ago.{" "}
-              <div
-                className="ml-[15px] text-base flex items-center cursor-pointer relative "
-                onClick={() => {
-                  onView();
-                }}
-              >
+              <div className="ml-[15px] text-base flex items-center cursor-pointer relative ">
                 <MdOutlinePublic className="z-[-20]" />
-                <BsFillCaretDownFill className="ml-1 mt-[3px] text-xs z-[-10]" />
-                {view ? (
+                {/* <BsFillCaretDownFill className="ml-1 mt-[3px] text-xs z-[-10]" /> */}
+                {/* {view ? (
                   <div className="absolute bg-gray-500 text-white rounded-md flex flex-col mt-[90px] text-[10px] z-[30]">
                     <div className="px-3 hover:scale-110 duration-300 transition-all">
                       Public
@@ -52,14 +46,14 @@ const VideoPart = () => {
                       Friends{" "}
                     </div>
                   </div>
-                ) : null}
+                ) : null} */}
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="mt-5 w-full justify-center flex h-auto z-[20]">
+      <div className="mt-5 w-full justify-center flex h-auto z-[-20]">
         <video
           src={Video}
           controls={control}
@@ -67,9 +61,12 @@ const VideoPart = () => {
           // loop
           // autoPlay
           className="object-cover w-[95%] rounded-lg h-full "
-        onClick={() => {
-          setControl(control)
-        }} onMouseLeave={onControl} onMouseEnter={onControl}/>
+          onClick={() => {
+            setControl(control);
+          }}
+          onMouseLeave={onControl}
+          onMouseEnter={onControl}
+        />
       </div>
       <Add />
       <Comment />

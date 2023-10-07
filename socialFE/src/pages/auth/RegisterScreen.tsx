@@ -8,6 +8,7 @@ import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 // import pix from "../../../public/vite.svg";
 import { registerApi } from "../../apis/AuthApi";
+import Swal from "sweetalert2";
 const RegisterScreen = () => {
   const navigate = useNavigate();
   const [checked, setChecked] = useState<boolean>(false);
@@ -37,10 +38,26 @@ const RegisterScreen = () => {
 
   const onSubmit = handleSubmit((data: any) => {
     const { name, email, password } = data;
-    registerApi({ name, email, password }).then((res: any) => {
-      navigate("/sign-in");
-      console.log("This is :", data);
-      console.log("This is res:", res);
+    registerApi({ name, email, password }).then((res: {}) => {
+      console.log(data)
+      if (res) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your work has been saved",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        navigate("/sign-in");
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
+        navigate("/sign-up");
+      }
+      
     });
     reset();
   });
@@ -48,7 +65,7 @@ const RegisterScreen = () => {
   return (
     <div className="w-full h-screen flex justify-center items-center bg-purple-300">
       <form
-        className="min-w-[320px] min-h-[400px] bg-white flex items-center flex-col rounded-xl shadow-lg"
+        className="min-w-[320px] min-h-[400px] bg-white  flex items-center flex-col rounded-xl shadow-lg"
         onSubmit={onSubmit}
       >
         <div className="mt-[20px]">Signup</div>

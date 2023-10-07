@@ -51,10 +51,21 @@ export const forgotApi = async (data: any) => {
   try {
     return await axios.patch(`${url}/forgot-password`, data).then((res: any) => {
       return res.data.data;
-    // console.log(res.data.data);
     
     });
   } catch (error) {
     console.log(error);
   }
 };
+
+export const viewUserApi = async (userID: string) => {
+  try {
+    return await axios.get(`${url}/${userID}/one-user`).then((res: any) => {
+      return res.data.data;
+    
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SiQuantconnect } from "react-icons/si";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
 const FirstHeader = () => {
   const [scroll, setScroll] = useState<boolean>(false);
@@ -43,12 +44,16 @@ const FirstHeader = () => {
               </div> : null
               }
               </div>
+              <Link to="/sign-in">
               <button className="mr-7 px-4 py-2 bg-purple-600 flex items-center rounded-lg text-white font-medium max-sm:hidden">
-                Get Started
+                Signin
               </button>
-              <button className=" px-4 py-2 bg-purple-600  text-white flex items-center rounded-lg max-sm:hidden">
-                Contact
+              </Link>
+             <Link to="/sign-up">
+             <button className=" px-4 py-2 bg-purple-600  text-white flex items-center rounded-lg max-sm:hidden">
+                Signup
               </button>
+             </Link>
             </div>
           </div>
         </div>
@@ -72,12 +77,16 @@ const FirstHeader = () => {
               </div> : null
                }
               </div>
-              <button className="mr-7 px-4 py-2 bg-white flex items-center rounded-lg text-purple-600 font-medium max-sm:hidden">
-                Get Started
+              <Link to="/sign-in">
+              <button className="mr-7 px-4 py-2 text-purple-400 flex items-center rounded-lg bg-white font-medium max-sm:hidden">
+                Signin
               </button>
-              <button className=" px-4 py-2 bg-white  text-purple-600 flex items-center rounded-lg max-sm:hidden ">
-                Contact
+              </Link>
+             <Link to="/sign-up">
+             <button className=" px-4 py-2 bg-white  text-purple-400 flex items-center rounded-lg max-sm:hidden">
+                Signup
               </button>
+             </Link>
             </div>
           </div>
         </div>

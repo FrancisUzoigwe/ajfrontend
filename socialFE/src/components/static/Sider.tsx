@@ -6,8 +6,13 @@ import { FaStore } from "react-icons/fa";
 import { TbLogout2 } from "react-icons/tb";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logOut } from "../../global/GlobalFile";
 
 const Sider = () => {
+
+const dispatch = useDispatch()
+
   const [log, setLog] = useState<boolean>(false);
   const onLog = () => {
     setLog(!log);
@@ -125,7 +130,9 @@ const Sider = () => {
         <div
           className="relative flex justify-center items-center cursor-pointer  transition-all duration-300"
           onMouseEnter={onLog}
-          onMouseLeave={onLog}
+          onMouseLeave={onLog} onClick={() => {
+            dispatch(logOut())
+          }}
         >
           <TbLogout2 className="text-2xl " />
           {log ? (

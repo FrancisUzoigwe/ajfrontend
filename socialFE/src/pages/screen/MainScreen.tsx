@@ -9,6 +9,8 @@ import TogglePage from "./TogglePage";
 
 const MainScreen = () => {
   const [toggle, setToggle] = useState<boolean>(false)
+  console.log(setToggle);
+  
   return (
     <div className="w-full h-[100%] mt-[68px]  max-sm:w-full overflow-hidden">
       {toggle && <TogglePage/>}
@@ -31,7 +33,6 @@ const MainScreen = () => {
               </div>
             </div>
           </div>
-
           <VideoPart />
           <TextPart />
           <VideoPart />
@@ -40,8 +41,8 @@ const MainScreen = () => {
         </div>
         <div className="max-h-[460px] w-[290px] max-sm:hidden mr-11 ">
           <Blog />
-          <Blog />
           <Blog stick="sticky top-[90px] z-[-50]" />
+          <Blog />
         </div>
       </div>
     </div>

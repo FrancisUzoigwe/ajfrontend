@@ -1,14 +1,12 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import * as yup from "yup";
-import { useNavigate } from "react-router-dom";
 import { ChangePasswordAPI } from "../../apis/AuthApi";
 
 const Forgotpassword = () => {
   const { token } = useParams();
-  const navigate = useNavigate();
   const [checked, setChecked] = useState<boolean>(false);
 
   const Schema = yup.object({
