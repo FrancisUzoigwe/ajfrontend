@@ -1,4 +1,5 @@
 import Device from "../../LandingComponents/Device"
+import Experts from "../../LandingComponents/Experts"
 import LandingHero from "../../LandingComponents/LandingHero"
 import Review from "../../LandingComponents/Review"
 import Unique from "../../LandingComponents/Unique"
@@ -13,6 +14,7 @@ const LandinScreen = () => {
      <Unique/>
      <Device/>
      <Review/>
+     <Experts/>
     </div>
   )
 }

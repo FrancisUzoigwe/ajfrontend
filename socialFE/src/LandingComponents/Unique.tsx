@@ -23,7 +23,7 @@ const Unique = () => {
             iure temporibus cupiditate.
           </div>
           <div className="w-full h-[500px] flex justify-center items-center ">
-      <div className="w-full h-[320px]  flex justify-between items-center">
+      <div className="w-full h-[320px]  flex justify-between items-center my-[20px]">
             
           <Card
             image={pix}

@@ -12,10 +12,10 @@ interface iTestimony {
 const Testimony : React.FC <iTestimony>= ({topic , content , img , staff , post}) => {
   return (
     <div>
-      <div className="w-[380px] h-[420px] p-4 rounded-[10px] border-4">
+      <div className="w-[380px] h-[420px] p-4 rounded-[10px] border-4 my-[30px]">
         <div className="w-full h-[70px]  flex justify-between">
           <div className="w-[200px] h-[60px] border"></div>
-          <div className="w-[70px] h-[60px] ">
+          <div className="w-[70px] h-[60px] text-gray-700">
             <img src={quote} alt="" className="w-full h-full" />
           </div>
         </div>

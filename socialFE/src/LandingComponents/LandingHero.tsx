@@ -3,7 +3,7 @@ import pix from "../assets/phone.png"
 const LandingHero = () => {
   return (
     <div>
-         <div className="w-[100%] h-[100vh] bg-blue-700 pl-[130px] pt-[120px]">
+         <div className="w-[100%] h-[100vh] bg-blue-700 pl-[130px] pt-[120px] mb-[30px]">
           <div className="w-[82%] h-full bg-blue-00 flex max-sm:w-[200px] relative">
             <div className="w-[60%]  h-full pt-8 bg-green-00 text-white">
               <div className="w-[80%] text-[64px] font-extrabold">Make Cool Landing Pages With sApp</div>
