@@ -15,12 +15,10 @@ const ImagePart = () => {
   //   setView(!view);
   // };
 
-  console.log(post)
+  console.log(post);
   return (
     <div>
       {post?.map((el: any) => (
-        
-        
         <div className="mt-5 w-full max-h-[550px]  rounded-md border border-gray-300">
           <div className="flex ">
             <div className="flex items-center mt-[5px]">
@@ -33,9 +31,6 @@ const ImagePart = () => {
               </div>
               <div className="mb-[-5px]">
                 <div className="flex text-[14px] items-center">
-                  {/* <div className="mr-2 text-[13px] font-semibold py-[2px]">
-                    {el.user?.name}
-                  </div>{" "} */}
                   <InfoComp userID={el.userID} />
                   <div className="text-[11px]">posted an update</div>
                 </div>
@@ -45,7 +40,7 @@ const ImagePart = () => {
                     className="ml-[15px] text-base flex items-center cursor-pointer relative "
                     onClick={() => {
                       // onView();
-                      console.log(post)
+                      console.log(post);
                     }}
                   >
                     <MdOutlinePublic className="z-[-20]" />
